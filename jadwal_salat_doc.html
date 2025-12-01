@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Quran API Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md p-4 fixed h-full">
+            <h2 class="text-xl font-bold mb-4">API Docs</h2>
+            <nav class="space-y-2">
+                <a href="al_quran_doc.html" class="block p-2 rounded hover:bg-gray-200">Al-Quran</a>
+                <a href="asmaul_husna_doc.html" class="block p-2 rounded hover:bg-gray-200">Asmaul Husna</a>
+                <a href="bacaan_salat_doc.html" class="block p-2 rounded hover:bg-gray-200">Bacaan Salat</a>
+                <a href="tahlil_doc.html" class="block p-2 rounded hover:bg-gray-200">Tahlil</a>
+                <a href="doa_harian_doc.html" class="block p-2 rounded hover:bg-gray-200">Doa Harian</a>
+                <a href="jadwal_salat_doc.html" class="block p-2 rounded bg-gray-200">Jadwal Salat</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 p-8 flex-1 overflow-y-auto h-screen">
+            <section id="intro" class="mb-10">
+                <h1 class="text-2xl font-bold mb-2">Pencarian Kota</h1>
+                <p class="text-gray-600 mb-4">Mendapatkan daftar kota di Indonesia untuk mencari jadwal salat</p>
+                <p class="w-full py-2 px-4 bg-gray-200 rounded-md text-gray-800 mb-4">https://equran.id/apidev/v2 <span class="bg-emerald-500 text-white text-xs font-bold py-1 px-3 ms-2 rounded-full">GET</span></p>
+                
+                <p class="text-gray-600 mb-4">Contoh Response :</p>
+                <pre class="bg-gray-200 text-gray-800 text-sm p-4 rounded-md overflow-x-auto">
+{
+    "status": true,
+    "request": {
+        "path": "/sholat/kota/cari/kediri",
+        "keyword": "kediri"
+    },
+    "data": [
+        {
+            "id": "1609",
+            "lokasi": "KAB. KEDIRI"
+        },
+        {
+            "id": "1632",
+            "lokasi": "KOTA KEDIRI"
+        }
+    ]
+}
+                </pre>
+            </section>
+
+
+            <section id="intro" class="mb-10">
+                <h1 class="text-2xl font-bold mb-2">Jadwal Salat Harian</h1>
+                <p class="text-gray-600 mb-4">Mendapatkan jadwal salat harian bedasarkan kota dan tanggal</p>
+                <p class="w-full py-2 px-4 bg-gray-200 rounded-md text-gray-800 mb-4">https://equran.id/apidev/v2 <span class="bg-emerald-500 text-white text-xs font-bold py-1 px-3 ms-2 rounded-full">GET</span></p>
+                
+                <p class="text-gray-600 mb-4">Contoh Response :</p>
+                <pre class="bg-gray-200 text-gray-800 text-sm p-4 rounded-md overflow-x-auto">
+{
+    "status": true,
+    "request": {
+        "path": "/sholat/jadwal/1632/2024/06/23"
+    },
+    "data": {
+        "id": 1632,
+        "lokasi": "KOTA KEDIRI",
+        "daerah": "JAWA TIMUR",
+        "jadwal": {
+            "tanggal": "Minggu, 23/06/2024",
+            "imsak": "04:13",
+            "subuh": "04:23",
+            "terbit": "05:41",
+            "dhuha": "06:10",
+            "dzuhur": "11:38",
+            "ashar": "14:57",
+            "maghrib": "17:28",
+            "isya": "18:42",
+            "date": "2024-06-23"
+        }
+    }
+}
+                </pre>
+            </section>
+
+
+            <section id="intro" class="mb-10">
+                <h1 class="text-2xl font-bold mb-2">Jadwal Salat per Bulan</h1>
+                <p class="text-gray-600 mb-4">Mendapatkan jadwal salat bedasarkan kota, bulan, dan tahun.</p>
+                <p class="w-full py-2 px-4 bg-gray-200 rounded-md text-gray-800 mb-4">https://equran.id/apidev/v2 <span class="bg-emerald-500 text-white text-xs font-bold py-1 px-3 ms-2 rounded-full">GET</span></p>
+                
+                <p class="text-gray-600 mb-4">Contoh Response :</p>
+                <pre class="bg-gray-200 text-gray-800 text-sm p-4 rounded-md overflow-x-auto">
+{
+    "status": true,
+    "request": {
+        "path": "/sholat/jadwal/1632/2024/06"
+    },
+    "data": {
+        "id": 1632,
+        "lokasi": "KOTA KEDIRI",
+        "daerah": "JAWA TIMUR",
+        "jadwal": [
+            {
+                "tanggal": "Sabtu, 01/06/2024",
+                "imsak": "04:08",
+                "subuh": "04:18",
+                "terbit": "05:36",
+                "dhuha": "06:05",
+                "dzuhur": "11:33",
+                "ashar": "14:53",
+                "maghrib": "17:24",
+                "isya": "18:38",
+                "date": "2024-06-01"
+            },
+            ....
+        ]
+    }
+}
+                </pre>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

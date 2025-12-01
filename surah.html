@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body class="bg-[url('src/img/bg_motif.jpg')] bg-repeat bg-fixed bg-[length:80%_auto]">
+    <nav class="py-4">
+        <div class="container mx-auto flex items-center justify-between w-5/6">
+            <div class="text-slate-700 font-bold text-xl">
+                Al Quran API
+            </div>
+
+            <div class="hidden md:flex space-x-5">
+                <a href="index.html" class="text-pink-900 hover:text-pink-700">
+                    Home
+                </a>
+                <a href="al_quran.html" class="text-pink-900 hover:text-pink-700">
+                    Al Quran
+                </a>
+                <a href="asmaul_husna.html" class="text-pink-900 hover:text-pink-700">
+                    Asmaul Husna
+                </a>
+                <a href="bacaan_salat.html" class="text-pink-900 hover:text-pink-700">
+                    Bacaan Salat
+                </a>
+                <a href="tahlil.html" class="text-pink-900 hover:text-pink-700">
+                    Tahlil
+                </a>
+                <a href="doa_harian.html" class="text-pink-900 hover:text-pink-700">
+                    Doa Harian
+                </a>
+                <a href="jadwal_salat.html" class="text-pink-900 hover:text-pink-700">
+                    Jadwal Salat
+                </a>
+            </div>
+
+            <div>
+                <a href="api_doc.html" class="bg-pink-900 text-white py-2 px-4 rounded-lg hover:bg-pink-800">Dokumentasi API</a>
+            </div>
+
+            <div class="md:hidden">
+                <button class="text-slate-700 hover:text-white focus:outline-none focus:shadow-outline-white">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ACTUAL CONTENTS -->
+    <div class="container mx-auto py-8 px-4 md:px-0 w-full md:w-2/3">
+        <!-- Surah Info -->
+        <p class="text-center text-slate-800 text-2xl md:text-3xl font-bold mb-6" id="surah_title">
+            Surah Al-Fatihah
+        </p>
+
+       
+        <div class="bg-white border border-2 border-pink-900 rounded-lg shadow-md overflow-hidden relative">
+
+            <!-- Top Arch Image as Background -->
+            <div class="relative w-full overflow-hidden">
+                <!-- Arch Background -->
+                <img src="src/img/surah_top_decor.png" alt="Arch Background"
+                    class="w-full h-auto object-cover pointer-events-none select-none" />
+
+                <!-- Text Overlaid on Arch -->
+                <div class="absolute top-10 left-0 w-full h-full flex flex-col justify-center items-center px-4 pt-6 pb-4 z-10">
+                    <p class="text-slate-800 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-1" id="surah_arabic">
+                    سورة الفاتحة
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base italic mb-1" id="surah_translation">
+                    The Opening
+                    </p>
+                    <p class="text-slate-500 text-xs sm:text-sm mb-3 text-center">
+                    Surah Number: <span class="font-medium" id="number_of_surah">1</span> |
+                    Ayat: <span class="font-medium" id="number_of_ayat">7</span> |
+                    Place: <span class="font-medium" id="surah_type">Meccan</span>
+                    </p>
+                    <!-- Main Play Button -->
+                     <audio id="surahAudio"  preload="auto"></audio>
+                    <img src="src/img/play_icon.png" id="play_btn"
+                        onclick="togglePlayAudioSurah(this)"
+                        class="w-10 sm:w-12 cursor-pointer">
+                </div>
+            </div>
+
+
+            <!-- Ayat Section -->
+            <div class="p-6">
+               
+
+                <!-- Ayat List -->
+                <div class="space-y-6" id="surah_container">
+
+                <!-- Example Ayah Block -->
+                <div class="flex items-start gap-4">
+                    <div class="text-right flex-1 cursor-pointer group" onclick="toggleTafsir(this)">
+                    <p class="text-sm text-slate-500 mb-1">Ayah 1</p>
+                    <p class="text-3xl mb-2 transition-all duration-200 group-hover:text-teal-600">
+                        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                    </p>
+                    <p class="text-slate-700 italic text-right">
+                        Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.
+                    </p>
+
+                    <div class="tafsir mt-3 hidden bg-slate-50 border border-slate-200 p-4 rounded-lg text-left">
+                        <p class="text-sm text-slate-600">
+                        Tafsir: Ayat ini adalah pembukaan dari setiap surat dalam Al-Quran...
+                        </p>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Repeat Ayah blocks as needed -->
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <section class="bg-[url('src/img/bg_footer.png')] py-6">
+        <div class="mx-auto w-5/6 text-white">
+            <p class="text-center mt-2 mb-2">"Allah SWT tidak melihat rupa dan hartamu, tetapi dia melihat hati dan perbuatanmu."</p>
+            <p class="text-center mb-6">— Nabi Muhammad SAW</p>
+            <p class="text-center text-xs">Made by Sofie Tiara H</p>
+        </div>
+        
+    </section>
+</body>
+<script src="js_controller/surah_controller.js"></script>
+<script>
+  function toggleTafsir(el) {
+    $(el).find('.tafsir').toggleClass('hidden');
+  }
+
+  function togglePlayAudioSurah(btn) {
+    const audio = $('#surahAudio')[0];
+
+    if ($(btn).attr('src') == 'src/img/play_icon.png') {
+        $(btn).attr('src', 'src/img/pause_icon.png');
+        audio.play(); 
+
+    } else {
+        $(btn).attr('src', 'src/img/play_icon.png');
+        audio.pause(); 
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Quran API Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md p-4 fixed h-full">
+            <h2 class="text-xl font-bold mb-4">API Docs</h2>
+            <nav class="space-y-2">
+                <a href="al_quran_doc.html" class="block p-2 rounded hover:bg-gray-200">Al-Quran</a>
+                <a href="asmaul_husna_doc.html" class="block p-2 rounded hover:bg-gray-200">Asmaul Husna</a>
+                <a href="bacaan_salat_doc.html" class="block p-2 rounded hover:bg-gray-200">Bacaan Salat</a>
+                <a href="tahlil_doc.html" class="block p-2 rounded hover:bg-gray-200">Tahlil</a>
+                <a href="doa_harian_doc.html" class="block p-2 rounded hover:bg-gray-200">Doa Harian</a>
+                <a href="jadwal_salat_doc.html" class="block p-2 rounded hover:bg-gray-200">Jadwal Salat</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 p-8 flex-1 overflow-y-auto h-screen">
+            <section id="intro" class="mb-10">
+                <h1 class="text-2xl font-bold">Introduction</h1>
+                <p class="text-gray-600 mb-4">Welcome to the Al-Quran API documentation...</p>
+                <p class="w-full py-2 px-4 bg-gray-200 rounded-md text-gray-800 mb-4">https://equran.id/apidev/v2</p>
+                <p class="text-gray-600 mb-4">Contoh Request :</p>
+                <p class="w-full py-2 px-4 bg-gray-200 rounded-md text-gray-800 mb-4">
+                    GET /api/v2/tafsir/110 HTTP/1.1 <br>
+                    Host: equran.id <br>
+                    Accept: */* <br>
+                    Content-Type: application/json <br>
+                </p>
+                <p class="text-gray-600 mb-4">Contoh Response :</p>
+                <pre class="bg-gray-200 text-gray-800 text-sm p-4 rounded-md overflow-x-auto">
+{
+    "code": 200,
+    "message": "Data retrieved successfully",
+    "data": {
+        "nomor": 110,
+        "nama": "النصر",
+        "namaLatin": "An-Nasr",
+        "jumlahAyat": 3,
+        "tempatTurun": "Madinah",
+        "arti": "Pertolongan",
+        "deskripsi": "Surat An Nashr terdiri atas 3 ayat...",
+        "audioFull": {
+            "01": "https://equran.nos.wjv-1.neo.id/audio-full/Abdullah-Al-Juhany/110.mp3",
+            "02": "https://equran.nos.wjv-1.neo.id/audio-full/Abdul-Muhsin-Al-Qasim/110.mp3"
+        },
+        "ayat": [
+            {
+                "nomorAyat": 1,
+                "teksArab": "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+                "teksLatin": "Iza ja'a nasrullahi wal-fath(u).",
+                "teksIndonesia": "Apabila telah datang pertolongan Allah dan kemenangan.",
+                "audio": {
+                    "01": "https://equran.nos.wjv-1.neo.id/audio-partial/Abdullah-Al-Juhany/110001.mp3"
+                    }
+                }
+        ]
+    }
+}
+                </pre>
+            </section>
+
+            <section id="endpoints" class="mb-10">
+                <h1 class="text-2xl font-bold">Endpoints</h1>
+                <p class="text-gray-600">List of available API endpoints...</p>
+            </section>
+
+            <section id="auth" class="mb-10">
+                <h1 class="text-2xl font-bold">Authentication</h1>
+                <p class="text-gray-600">How to authenticate API requests...</p>
+            </section>
+
+            <section id="examples" class="mb-10">
+                <h1 class="text-2xl font-bold">Examples</h1>
+                <p class="text-gray-600">Example requests and responses...</p>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

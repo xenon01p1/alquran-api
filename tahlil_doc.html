@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Quran API Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md p-4 fixed h-full">
+            <h2 class="text-xl font-bold mb-4">API Docs</h2>
+            <nav class="space-y-2">
+                <a href="al_quran_doc.html" class="block p-2 rounded hoever:bg-gray-200">Al-Quran</a>
+                <a href="asmaul_husna_doc.html" class="block p-2 rounded hover:bg-gray-200">Asmaul Husna</a>
+                <a href="bacaan_salat_doc.html" class="block p-2 rounded hover:bg-gray-200">Bacaan Salat</a>
+                <a href="tahlil_doc.html" class="block p-2 rounded bg-gray-200">Tahlil</a>
+                <a href="doa_harian_doc.html" class="block p-2 rounded hover:bg-gray-200">Doa Harian</a>
+                <a href="jadwal_salat_doc.html" class="block p-2 rounded hover:bg-gray-200">Jadwal Salat</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 p-8 flex-1 overflow-y-auto h-screen">
+            <section id="intro" class="mb-10">
+                <h1 class="text-2xl font-bold mb-2">Tahlil</h1>
+                <p class="text-gray-600 mb-4">Mendapatkan bacaan tahlil</p>
+                <p class="w-full py-2 px-4 bg-gray-200 rounded-md text-gray-800 mb-4">https://equran.id/apidev/v2 <span class="bg-emerald-500 text-white text-xs font-bold py-1 px-3 ms-2 rounded-full">GET</span></p>
+                
+                <p class="text-gray-600 mb-4">Contoh Response :</p>
+                <pre class="bg-gray-200 text-gray-800 text-sm p-4 rounded-md overflow-x-auto">
+{
+  "status": true,
+  "message": "success",
+  "data": [
+    {
+      "id": 1,
+      "title": "Pengantar Al-Fatihah",
+      "arabic": "اِلَى حَضْرَةِ النَّبِيِّ صَلَّى اللهُ عَلَيهِ وَسَلَّمَ وَاَلِهِ وصَحْبِهِ شَيْءٌ لِلهِ لَهُمُ الْفَاتِحَةُ",
+      "translation": "Dengan nama Allah yang maha pengasih lagi maha penyayang. Untuk yang terhormat Nabi Muhammad SAW, segenap keluarga, dan para sahabatnya. Bacaan Al-Fatihah ini kami tujukan kepada Allah dan pahalanya untuk mereka semua. Al-Fatihah…"
+    },
+    {
+      "id": 2,
+      "title": "Al-Fatihah",
+      "arabic": "بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ . اَلْحَمْدُ لِلهِ رَبِّ الْعَالَمِيْنَ . اَلرَّحْمَنِ الرَّحِيْمِ. مَالِكِ يَوْمِ الدِّيْنِ . اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ . اِهْدِنَا الصِّرَاطَ الَّمُسْتَقِيْمَ . صِرَاطَ الَّذِ يْنَ اَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّالِّيْنَ . اَمِينْ",
+      "translation": "Aku berlindung kepada Allah dari setan yang terlontar. Dengan menyebut nama Allah yang maha pengasih lagi maha penyayang. Segala puji bagi Allah, Tuhan semesta alam. Yang maha pengasih lagi maha penyayang. Yang menguasai hari pembalasan. Hanya kepada-Mu kami menyembah. Hanya kepada-Mu pula kami memohon pertolongan. Tunjukkanlah kami ke jalan yang lurus, yaitu jalan orang-orang yang telah Kauanugerahi nikmat kepada mereka, bukan jalan mereka yang dimurkai dan bukan pula jalan mereka yang sesat. Semoga Kau kabulkan permohonan kami"
+    },
+
+    // bacaan tahlil lainnya //
+  ]
+}
+                </pre>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

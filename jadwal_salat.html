@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body class="bg-[url('src/img/bg_motif.jpg')] bg-repeat bg-fixed bg-[length:80%_auto]">
+    <nav class="py-4">
+        <div class="container mx-auto flex items-center justify-between w-5/6">
+            <div class="text-slate-700 font-bold text-xl">
+                Al Quran API
+            </div>
+
+            <div class="hidden md:flex space-x-5">
+                <a href="index.html" class="text-pink-900 hover:text-pink-700">
+                    Home
+                </a>
+                <a href="al_quran.html" class="text-pink-900 hover:text-pink-700">
+                    Al Quran
+                </a>
+                <a href="asmaul_husna.html" class="text-pink-900 hover:text-pink-700">
+                    Asmaul Husna
+                </a>
+                <a href="bacaan_salat.html" class="text-pink-900 hover:text-pink-700">
+                    Bacaan Salat
+                </a>
+                <a href="tahlil.html" class="text-pink-900 hover:text-pink-700">
+                    Tahlil
+                </a>
+                <a href="doa_harian.html" class="text-pink-900 hover:text-pink-700">
+                    Doa Harian
+                </a>
+                <a href="jadwal_salat.html" class="text-pink-900 hover:text-pink-700">
+                    Jadwal Salat
+                </a>
+            </div>
+
+            <div>
+                <a href="api_doc.html" class="bg-pink-900 text-white py-2 px-4 rounded-lg hover:bg-pink-800">Dokumentasi API</a>
+            </div>
+
+            <div class="md:hidden">
+                <button class="text-slate-700 hover:text-white focus:outline-none focus:shadow-outline-white">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ACTUAL CONTENTS -->
+    <div class="flex-grow">
+        <div class="container mx-auto py-8 w-5/6">
+
+            <p class="text-center text-slate-800 text-2xl md:text-3xl font-bold mb-8">
+                Jadwal Salat
+            </p>
+
+            
+            <div class="w-full max-w-xl mb-10 mx-auto">
+                <div class="flex items-center bg-white border border-gray-300 rounded-full shadow-sm px-4 py-2">
+                <input type="text" name="kota" id="kota" placeholder="Search for a city or address..." class="flex-grow outline-none text-sm text-gray-700" />
+            
+                </div>
+            </div>
+
+            <!-- Location List -->
+            <div id="list-location"></div>
+            <!-- <div class="w-full max-w-xl bg-white rounded-lg mx-auto shadow mb-10">
+                <ul class="divide-y divide-gray-200">
+                <li class="px-6 py-4 hover:bg-gray-100 cursor-pointer">New York, NY, United States</li>
+                <li class="px-6 py-4 hover:bg-gray-100 cursor-pointer">London, England, United Kingdom</li>
+                <li class="px-6 py-4 bg-blue-100 hover:bg-blue-200 cursor-pointer text-blue-700">Dubai, United Arab Emirates</li>
+                <li class="px-6 py-4 hover:bg-gray-100 cursor-pointer">Mecca, Saudi Arabia</li>
+                <li class="px-6 py-4 hover:bg-gray-100 cursor-pointer">Istanbul, Turkey</li>
+                </ul>
+            </div> -->
+
+            <div class=" mb-8" id="bacaan_salat_container">
+
+                <!-- Card -->
+                <div class="bg-white rounded-lg shadow p-6 mb-10">
+                    <h2 class="text-lg font-semibold mb-6" id="daily_title">Jadwal Sholat Harian</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- Prayer Item -->
+                        <div class="bg-gray-50 rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-800 font-semibold" id="imsak">Imsak</div>
+                        <div class="text-pink-900 text-lg font-medium mt-1" id="imsak_time">04:33</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-800 font-semibold">Subuh</div>
+                        <div class="text-pink-900 text-lg font-medium mt-1" id="subuh_time">05:52</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-800 font-semibold">Dhuhr</div>
+                        <div class="text-pink-900 text-lg font-medium mt-1" id="zuhur_time">12:25</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-800 font-semibold">Asr</div>
+                        <div class="text-pink-900 text-lg font-medium mt-1" id="asar_time">15:50</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-800 font-semibold">Maghrib</div>
+                        <div class="text-pink-900 text-lg font-medium mt-1" id="maghrib_time">18:58</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4 text-center shadow-sm">
+                        <div class="text-gray-800 font-semibold">Isha</div>
+                        <div class="text-pink-900 text-lg font-medium mt-1" id="isya_time">20:28</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow rounded-lg p-6 mb-10">
+                    <h2 class="text-lg font-semibold mb-4" id="monthly_title">Jadwal Sholat</h2>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full table-auto border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-700 text-sm">
+                            <th class="px-4 py-3 text-left font-medium">Date</th>
+                            <th class="px-4 py-3 text-left font-medium">Imsak</th>
+                            <th class="px-4 py-3 text-left font-medium">Subuh</th>
+                            <th class="px-4 py-3 text-left font-medium">Dhuhr</th>
+                            <th class="px-4 py-3 text-left font-medium">Asr</th>
+                            <th class="px-4 py-3 text-left font-medium">Maghrib</th>
+                            <th class="px-4 py-3 text-left font-medium">Isha</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-gray-700" id="container_monthly_schedule">
+                            
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <section class="bg-[url('src/img/bg_footer.png')] py-6">
+        <div class="mx-auto w-5/6 text-white">
+            <p class="text-center mt-2 mb-2">"Allah SWT tidak melihat rupa dan hartamu, tetapi dia melihat hati dan perbuatanmu."</p>
+            <p class="text-center mb-6">— Nabi Muhammad SAW</p>
+            <p class="text-center text-xs">Made by Sofie Tiara H</p>
+        </div>
+        
+    </section>
+</body>
+<script src="js_controller/jadwal_salat_controller.js"></script>
+</html>

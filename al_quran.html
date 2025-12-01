@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body class="bg-[url('src/img/bg_motif.jpg')] bg-repeat bg-fixed bg-[length:80%_auto]">
+    <nav class="py-4">
+        <div class="container mx-auto flex items-center justify-between w-5/6">
+            <div class="text-slate-700 font-bold text-xl">
+                Al Quran API
+            </div>
+
+            <div class="hidden md:flex space-x-5">
+                <a href="index.html" class="text-pink-900 hover:text-pink-700">
+                    Home
+                </a>
+                <a href="al_quran.html" class="text-pink-900 hover:text-pink-700">
+                    Al Quran
+                </a>
+                <a href="asmaul_husna.html" class="text-pink-900 hover:text-pink-700">
+                    Asmaul Husna
+                </a>
+                <a href="bacaan_salat.html" class="text-pink-900 hover:text-pink-700">
+                    Bacaan Salat
+                </a>
+                <a href="tahlil.html" class="text-pink-900 hover:text-pink-700">
+                    Tahlil
+                </a>
+                <a href="doa_harian.html" class="text-pink-900 hover:text-pink-700">
+                    Doa Harian
+                </a>
+                <a href="jadwal_salat.html" class="text-pink-900 hover:text-pink-700">
+                    Jadwal Salat
+                </a>
+            </div>
+
+            <div>
+                <a href="api_doc.html" class="bg-pink-900 text-white py-2 px-4 rounded-lg hover:bg-pink-800">Dokumentasi API</a>
+            </div>
+
+            <div class="md:hidden">
+                <button class="text-slate-700 hover:text-white focus:outline-none focus:shadow-outline-white">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ACTUAL CONTENTS -->
+    <div class="container mx-auto py-8 w-5/6 md:w-3/4">
+
+        <p class="text-center text-slate-800 text-2xl md:text-3xl font-bold mb-8">
+            Al-Quran
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-x-14 md:gap-y-6 mb-8" id="alquran_container">
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md border hover:bg-purple-50 transition-colors duration-200 cursor-pointer">
+              <!-- Surah Number -->
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg text-lg font-semibold">
+                  1
+                </div>
+                <div class="ml-4">
+                  <h2 class="text-lg font-semibold">Al-Fatihah</h2>
+                  <p class="text-gray-500">Pembuka</p>
+                </div>
+              </div>
+
+              <!-- Surah Arabic & Ayat Count -->
+              <div class="text-right">
+                <p class="text-xl font-arabic">الفاتحة</p>
+                <p class="text-gray-500 text-sm">7 Ayat</p>
+              </div>
+            </div>
+
+
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md border hover:bg-purple-50 transition-colors duration-200 cursor-pointer">
+              <!-- Surah Number -->
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg text-lg font-semibold">
+                  1
+                </div>
+                <div class="ml-4">
+                  <h2 class="text-lg font-semibold">Al-Fatihah</h2>
+                  <p class="text-gray-500">Pembuka</p>
+                </div>
+              </div>
+
+              <!-- Surah Arabic & Ayat Count -->
+              <div class="text-right">
+                <p class="text-xl font-arabic">الفاتحة</p>
+                <p class="text-gray-500 text-sm">7 Ayat</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md border hover:bg-purple-50 transition-colors duration-200 cursor-pointer">
+              <!-- Surah Number -->
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg text-lg font-semibold">
+                  1
+                </div>
+                <div class="ml-4">
+                  <h2 class="text-lg font-semibold">Al-Fatihah</h2>
+                  <p class="text-gray-500">Pembuka</p>
+                </div>
+              </div>
+
+              <!-- Surah Arabic & Ayat Count -->
+              <div class="text-right">
+                <p class="text-xl font-arabic">الفاتحة</p>
+                <p class="text-gray-500 text-sm">7 Ayat</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md border hover:bg-purple-50 transition-colors duration-200 cursor-pointer">
+              <!-- Surah Number -->
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg text-lg font-semibold">
+                  1
+                </div>
+                <div class="ml-4">
+                  <h2 class="text-lg font-semibold">Al-Fatihah</h2>
+                  <p class="text-gray-500">Pembuka</p>
+                </div>
+              </div>
+
+              <!-- Surah Arabic & Ayat Count -->
+              <div class="text-right">
+                <p class="text-xl font-arabic">الفاتحة</p>
+                <p class="text-gray-500 text-sm">7 Ayat</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-md border hover:bg-purple-50 transition-colors duration-200 cursor-pointer">
+              <!-- Surah Number -->
+              <div class="flex items-center">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg text-lg font-semibold">
+                  1
+                </div>
+                <div class="ml-4">
+                  <h2 class="text-lg font-semibold">Al-Fatihah</h2>
+                  <p class="text-gray-500">Pembuka</p>
+                </div>
+              </div>
+
+              <!-- Surah Arabic & Ayat Count -->
+              <div class="text-right">
+                <p class="text-xl font-arabic">الفاتحة</p>
+                <p class="text-gray-500 text-sm">7 Ayat</p>
+              </div>
+            </div>
+              
+        </div>
+
+        
+        
+    </div>
+
+    <!-- FOOTER -->
+    <section class="bg-[url('src/img/bg_footer.png')] py-6">
+        <div class="mx-auto w-5/6 text-white">
+            <p class="text-center mt-2 mb-2">"Allah SWT tidak melihat rupa dan hartamu, tetapi dia melihat hati dan perbuatanmu."</p>
+            <p class="text-center mb-6">— Nabi Muhammad SAW</p>
+            <p class="text-center text-xs">Made by Sofie Tiara H</p>
+        </div>
+        
+    </section>
+</body>
+<script src="js_controller/alquran_controller.js"></script>
+</html>
